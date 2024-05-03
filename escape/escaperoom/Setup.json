@@ -60,7 +60,7 @@
    
       {
         "Type": 1,
-        "Color": 3,
+        "Color": 1,
         "PosX": 0,
         "PosY": 0
       },
@@ -527,21 +527,66 @@
         "PosY": 5
       },
       {
+        "Type": 4,
+        "Color": 7,
+        "PosX": 28,
+        "PosY": 5,
+       
+        "CharRepresentation":"█"
+      },
+      {
+        "Type": 4,
+        "Color": 0,
+        "PosX": 28,
+        "PosY": 6,
+        "Code": "0",
+        "CharRepresentation":"█"
+      }, 
+      {
+        "Type": 4,
+        "Color": 0,
+        "PosX": 28,
+        "PosY": 7,
+        "Code": "0",
+        "CharRepresentation":"█"
+      }, 
+      {
+        "Type": 4,
+        "Color": 0,
+        "PosX": 28,
+        "PosY": 8,
+        "Code": "0",
+        "CharRepresentation":"█"
+      }, 
+      {
+        "Type": 4,
+        "Color": 7,
+        "PosX": 28,
+        "PosY": 9,
+       
+        "CharRepresentation":"█"
+      },
+      {
         "Type": 1,
         "Color": 3,
         "PosX": 29,
         "PosY": 6
-      }, {
+      
+      }, 
+      {
         "Type": 1,
         "Color": 3,
         "PosX": 29,
         "PosY": 7
-      }, {
+      
+      }, 
+      {
         "Type": 1,
         "Color": 3,
         "PosX": 29,
         "PosY": 8
-      }, {
+        
+      },{
         "Type": 1,
         "Color": 3,
         "PosX": 29,
@@ -572,12 +617,7 @@
         "PosX": 29,
         "PosY": 14
       },
-      {
-        "Type": 1,
-        "Color": 3,
-        "PosX": 29,
-        "PosY": 6
-      },
+   
       {
         "Type": 1,
         "Color": 3,

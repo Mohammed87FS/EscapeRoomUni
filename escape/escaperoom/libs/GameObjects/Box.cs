@@ -38,7 +38,7 @@ public class Box : GameObject
             if (map.Get(PosY, PosX).Type != GameObjectType.Target)
             {
                 gameObjectFactory.IncrementAmountOfBoxes();
-          GameEngine.Instance.CheckWinCondition();
+       
       
      
 

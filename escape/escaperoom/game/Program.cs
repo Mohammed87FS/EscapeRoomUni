@@ -7,7 +7,7 @@ class Program
         Console.CursorVisible = false;
         var engine = GameEngine.Instance;
 
-        bool isHardMode = AskYesNoQuestion("You are about to gain knowledge but abandon your sanity, win the game but lose in life. Do you want to play on easy mode?");
+        bool isHardMode = AskYesNoQuestion("You are about to gain knowledge but abandon your sanity, win the game but lose in life. Do you want to play on hard mode?");
         // bool skipTutorial = AskYesNoQuestion("Would you like to skip the tutorial?");
 
        
@@ -32,7 +32,7 @@ class Program
 {
     while (true)
     {
-        Console.Write(question + " (y/n): ");
+        Console.Write(question + " (y/n) ");
         var key = Console.ReadKey(true);
 
         switch (key.Key)
@@ -47,6 +47,7 @@ class Program
 
             case ConsoleKey.Escape:
                 Console.WriteLine("Exiting question...");
+                 Environment.Exit(0);
                 return false;
 
             default:

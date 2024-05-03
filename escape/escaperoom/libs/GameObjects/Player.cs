@@ -2,7 +2,10 @@ namespace libs;
 
 public class Player : GameObject
 {
+
     private static Player instance = null;
+     private GameObjectFactory gameObjectFactory;
+    private int targetsLeft;
 
     public Map map = GameEngine.Instance.GetMap();
 
@@ -11,6 +14,8 @@ public class Player : GameObject
         Type = GameObjectType.Player;
         CharRepresentation = '☻';
         Color = ConsoleColor.DarkYellow;
+         this.gameObjectFactory = GameEngine.Instance.gameObjectFactory as GameObjectFactory;
+        this.targetsLeft = gameObjectFactory.AmountOfBoxes;
 
     }
 
@@ -39,18 +44,36 @@ public class Player : GameObject
 
         if (PotentialBox.Type == GameObjectType.Obstacle) return;
 
+        GameObject? PotentialDoor = map.Get(goToY, goToX);
+
+        if (  gameObjectFactory.AmountOfBoxes == 5)
+        {
+
+ 
+        PotentialDoor.Color = ConsoleColor.Green;
+
+      
+        if (PotentialDoor.Type == GameObjectType.Target && PotentialDoor.Code == "0" && PotentialDoor.Color == ConsoleColor.Green)
+        {
+
+
+            Console.WriteLine("Yo are a winner!!");
 
 
 
+            Environment.Exit(0);
+        }
+
+        }
 
         if (PotentialBox.Type == GameObjectType.Box)
         {
             GameObject? NextObject = map.Get(goToY + dy, goToX + dx);
 
-        //    for (int i = 0; i < 3000; i++)
-        //         {
-        //             Console.WriteLine(PotentialBox.Code);
-        //         }
+            //    for (int i = 0; i < 3000; i++)
+            //         {
+            //             Console.WriteLine(PotentialBox.Code);
+            //         }
 
 
 
