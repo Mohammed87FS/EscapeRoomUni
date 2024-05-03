@@ -647,7 +647,7 @@
         "Color": 4,
         "PosX": 7,
         "PosY": 7,
-        "Code":"d"
+        "Code":"r"
       },
   
       {
@@ -656,7 +656,7 @@
         "Color": 2,
         "PosX": 8,
         "PosY": 7,
-        "Code":"o"
+        "Code":"e"
       },
       {
         "Type": 4,
@@ -664,36 +664,36 @@
         "Color": 2,
         "PosX": 9,
         "PosY": 7,
-        "Code":"g"
-      },
-      {
-        "Type": 2,
-        "CharRepresentation":"d",
-        "Color": 2,
-        "PosX": 2,
-        "PosY": 2,
         "Code":"d"
       },
       {
         "Type": 2,
-        "CharRepresentation":"o",
-        "Color": 3,
-        "PosX": 3,
-        "PosY": 7,
-        "Code":"o"
+        "CharRepresentation":"e",
+        "Color": 2,
+        "PosX": 2,
+        "PosY": 2,
+        "Code":"e"
       },
       {
         "Type": 2,
-        "CharRepresentation":"g",
+        "CharRepresentation":"r",
+        "Color": 3,
+        "PosX": 3,
+        "PosY": 7,
+        "Code":"r"
+      },
+      {
+        "Type": 2,
+        "CharRepresentation":"d",
         "Color": 3,
         "PosX": 12,
         "PosY": 11,
-        "Code":"g"
+        "Code":"d"
       },
    
       {
         "Type": 1,
-        "Color": 3,
+        "Color": 1,
         "PosX": 0,
         "PosY": 0
       },
@@ -1160,21 +1160,66 @@
         "PosY": 5
       },
       {
+        "Type": 4,
+        "Color": 7,
+        "PosX": 28,
+        "PosY": 5,
+       
+        "CharRepresentation":"█"
+      },
+      {
+        "Type": 4,
+        "Color": 0,
+        "PosX": 28,
+        "PosY": 6,
+        "Code": "0",
+        "CharRepresentation":"█"
+      }, 
+      {
+        "Type": 4,
+        "Color": 0,
+        "PosX": 28,
+        "PosY": 7,
+        "Code": "0",
+        "CharRepresentation":"█"
+      }, 
+      {
+        "Type": 4,
+        "Color": 0,
+        "PosX": 28,
+        "PosY": 8,
+        "Code": "0",
+        "CharRepresentation":"█"
+      }, 
+      {
+        "Type": 4,
+        "Color": 7,
+        "PosX": 28,
+        "PosY": 9,
+       
+        "CharRepresentation":"█"
+      },
+      {
         "Type": 1,
         "Color": 3,
         "PosX": 29,
         "PosY": 6
-      }, {
+      
+      }, 
+      {
         "Type": 1,
         "Color": 3,
         "PosX": 29,
         "PosY": 7
-      }, {
+      
+      }, 
+      {
         "Type": 1,
         "Color": 3,
         "PosX": 29,
         "PosY": 8
-      }, {
+        
+      },{
         "Type": 1,
         "Color": 3,
         "PosX": 29,
@@ -1205,12 +1250,7 @@
         "PosX": 29,
         "PosY": 14
       },
-      {
-        "Type": 1,
-        "Color": 3,
-        "PosX": 29,
-        "PosY": 6
-      },
+   
       {
         "Type": 1,
         "Color": 3,
@@ -1226,7 +1266,6 @@
       }
 
     ]
-  
   
 
   }
