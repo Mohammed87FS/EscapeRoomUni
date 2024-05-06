@@ -32,7 +32,7 @@ class Program
 {
     while (true)
     {
-        Console.Write(question + " (y/n) ");
+        Console.Write(question + " (y/n)  ");
         var key = Console.ReadKey(true);
 
         switch (key.Key)

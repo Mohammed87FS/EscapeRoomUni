@@ -13,7 +13,8 @@ public class Box : GameObject
         this.gameObjectFactory = GameEngine.Instance.gameObjectFactory as GameObjectFactory;
         this.targetsLeft = gameObjectFactory.AmountOfBoxes;
         Type = GameObjectType.Box; 
-       
+
+        this.Color = ConsoleColor.DarkCyan;
    
         
     }

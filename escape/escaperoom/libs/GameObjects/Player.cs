@@ -46,11 +46,11 @@ public class Player : GameObject
 
         GameObject? PotentialDoor = map.Get(goToY, goToX);
 
-        if (  gameObjectFactory.AmountOfBoxes == 5)
+        if (  gameObjectFactory.AmountOfBoxes == 11)
         {
 
  
-        PotentialDoor.Color = ConsoleColor.Green;
+        GameEngine.Instance.UpdateTargetColors();
 
       
         if (PotentialDoor.Type == GameObjectType.Target && PotentialDoor.Code == "0" && PotentialDoor.Color == ConsoleColor.Green)

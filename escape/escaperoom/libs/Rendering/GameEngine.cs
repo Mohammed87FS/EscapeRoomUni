@@ -12,7 +12,7 @@ public sealed class GameEngine
     private static GameEngine? _instance;
     private Timer gameTimer;
     private DateTime startTime;
-    private const int GameDuration = 60000;
+    private const int GameDuration = 80000;
     private int lastLineCursor = 0;
     public GameObjectFactory gameObjectFactory;
 
@@ -173,6 +173,16 @@ public sealed class GameEngine
     }
 
  
+public void UpdateTargetColors()
+{
+    foreach (var obj in map.GetAllObjects()) 
+    {
+        if (obj.Type == GameObjectType.Target && obj.Color == ConsoleColor.Black )
+        {
+            obj.Color = ConsoleColor.Green;
+        }
+    }
+}
 
     public void SaveGameState()
     {
