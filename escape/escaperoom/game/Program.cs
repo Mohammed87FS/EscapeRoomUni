@@ -6,6 +6,9 @@ class Program
     static void Main(string[] args)
     {
         Console.CursorVisible = false;
+
+        ShowMainMenu();
+
         var engine = GameEngine.Instance;
 
         string dialogFilePath = "Data/dialogs.json";
@@ -21,6 +24,34 @@ class Program
 
             ConsoleKeyInfo keyInfo = Console.ReadKey(true);
             inputHandler.Handle(keyInfo);
+        }
+    }
+
+    static void ShowMainMenu()
+    {
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Main Menu ===");
+            Console.WriteLine("1. Start Game");
+            Console.WriteLine("2. Quit Game");
+            Console.WriteLine("Select an option: ");
+
+            var key = Console.ReadKey(true);
+
+            switch (key.Key)
+            {
+                case ConsoleKey.D1:
+                case ConsoleKey.NumPad1:
+                    return;
+                case ConsoleKey.D2:
+                case ConsoleKey.NumPad2:
+                    Environment.Exit(0); 
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice. Please select a valid option.");
+                    break;
+            }
         }
     }
 
@@ -50,7 +81,6 @@ class Program
             int choice = GetValidInput(dialog.Responses.Count);
             currentId = dialog.Responses[choice - 1].NextId;
 
-      
             if (currentId == -1 && dialog.Text.Contains("Do you want to play on hard mode?"))
             {
                 return dialog.Responses[choice - 1].Text.ToLower().Contains("yes");
