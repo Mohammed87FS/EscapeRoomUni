@@ -33,9 +33,10 @@ class Program
         {
             Console.Clear();
             Console.WriteLine("=== Main Menu ===");
+            Console.WriteLine("Select an option: ");
             Console.WriteLine("1. Start Game");
             Console.WriteLine("2. Quit Game");
-            Console.WriteLine("Select an option: ");
+
 
             var key = Console.ReadKey(true);
 
@@ -46,7 +47,7 @@ class Program
                     return;
                 case ConsoleKey.D2:
                 case ConsoleKey.NumPad2:
-                    Environment.Exit(0); 
+                    Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("Invalid choice. Please select a valid option.");
