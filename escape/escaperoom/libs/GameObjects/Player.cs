@@ -6,7 +6,7 @@ public class Player : GameObject
     private static Player instance = null;
     private GameObjectFactory gameObjectFactory;
     private int targetsLeft;
-
+    private int health;
     public Map map = GameEngine.Instance.GetMap();
 
     private Player() : base()
@@ -14,6 +14,7 @@ public class Player : GameObject
         Type = GameObjectType.Player;
         CharRepresentation = '☻';
         Color = ConsoleColor.DarkYellow;
+        this.health = 100;
         this.gameObjectFactory = GameEngine.Instance.gameObjectFactory as GameObjectFactory;
         this.targetsLeft = gameObjectFactory.AmountOfBoxes;
 
@@ -44,12 +45,18 @@ public class Player : GameObject
 
         if (PotentialBox.Type == GameObjectType.Obstacle) return;
 
+           if (PotentialBox.Type == GameObjectType.Enemy)
+        {
+            TakeDamage(25); 
+            return;
+        }
+
         GameObject? PotentialDoor = map.Get(goToY, goToX);
 
         if (gameObjectFactory.AmountOfBoxes == 11)
         {
 
-//here target changes to green 
+       
             GameEngine.Instance.UpdateTargetColors();
 
 
@@ -81,5 +88,15 @@ public class Player : GameObject
         this.SetPrevPosX(this.PosX);
         this.PosX += dx;
         this.PosY += dy;
+    }
+       private void TakeDamage(int amount)
+    {
+        health -= amount;
+        Console.WriteLine($"Player health: {health}");
+        if (health <= 0)
+        {
+            Console.WriteLine("You died!");
+            Environment.Exit(0);
+        }
     }
 }

@@ -1,15 +1,18 @@
 namespace libs;
 
-public class GameObjectFactory : IGameObjectFactory {
+public class GameObjectFactory : IGameObjectFactory
+{
     private int amountOfBoxes = -4;
 
     public int AmountOfBoxes => amountOfBoxes;
 
-    public GameObject CreateGameObject(dynamic obj) {
+    public GameObject CreateGameObject(dynamic obj)
+    {
         GameObject newObj;
         int type = obj.Type;
 
-        switch (type) {
+        switch (type)
+        {
             case (int)GameObjectType.Player:
                 newObj = Player.Instance;
                 newObj.PosX = obj.PosX;
@@ -25,7 +28,10 @@ public class GameObjectFactory : IGameObjectFactory {
             case (int)GameObjectType.Target:
                 newObj = obj.ToObject<Target>();
                 break;
-             
+            case (int)GameObjectType.Enemy:
+                newObj = obj.ToObject<Enemy>();
+                break;
+
             default:
                 newObj = new GameObject();
                 break;
@@ -33,21 +39,24 @@ public class GameObjectFactory : IGameObjectFactory {
         return newObj;
     }
 
-    public void IncrementAmountOfBoxes() {
+    public void IncrementAmountOfBoxes()
+    {
         amountOfBoxes++;
-            // for (int i = 0; i < 300; i++)
-            //     {
-            //           Console.WriteLine(     amountOfBoxes);
-            //     }
-        
+        // for (int i = 0; i < 300; i++)
+        //     {
+        //           Console.WriteLine(     amountOfBoxes);
+        //     }
 
- 
+
+
     }
-//  public void ResetAmountOfBoxes() {
-//         amountOfBoxes = 0;
-//     }
-    public void DecrementAmountOfBoxes() {
-        if (amountOfBoxes > 0) {
+    //  public void ResetAmountOfBoxes() {
+    //         amountOfBoxes = 0;
+    //     }
+    public void DecrementAmountOfBoxes()
+    {
+        if (amountOfBoxes > 0)
+        {
             amountOfBoxes--;
         }
     }

@@ -17,6 +17,14 @@
         "Code":"p"
       },
     
+      {
+        "Type": 5,
+        
+        "Color": 2,
+        "PosX": 8,
+        "PosY": 8
+    
+      },
         {
           "Type": 4,
          
