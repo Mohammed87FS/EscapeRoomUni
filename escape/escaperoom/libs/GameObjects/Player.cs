@@ -70,12 +70,6 @@ public class Player : GameObject
         {
             GameObject? NextObject = map.Get(goToY + dy, goToX + dx);
 
-            //    for (int i = 0; i < 3000; i++)
-            //         {
-            //             Console.WriteLine(PotentialBox.Code);
-            //         }
-
-
 
             if (NextObject.Type == GameObjectType.Obstacle || NextObject.Type == GameObjectType.Box) return;
 

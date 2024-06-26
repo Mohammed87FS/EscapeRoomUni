@@ -31,10 +31,7 @@ public class Box : GameObject
         if (potentialTarget != null && potentialTarget.Type == GameObjectType.Target && potentialTarget.Code==Code)
         {
 
-            //    for (int i = 0; i < 3000; i++)
-            //     {
-            //         Console.WriteLine( Code);
-            //    }
+       
 
             if (map.Get(PosY, PosX).Type != GameObjectType.Target)
             {
@@ -43,7 +40,7 @@ public class Box : GameObject
       
      
 
-//i need to keep rendering obje..
+
             }
         }
         else

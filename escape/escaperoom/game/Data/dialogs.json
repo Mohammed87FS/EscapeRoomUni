@@ -1,0 +1,35 @@
+{
+  "dialogs": [
+    {
+      "id": 1,
+      "text": "Welcome to the game! Type 1 or 2. Would you like to start with a tutorial?",
+      "responses": [
+        {"text": "Yes, please.", "nextId": 2},
+        {"text": "No, skip to the game.", "nextId": 4}
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Use up, down, left and right to move the player.",
+      "responses": [
+        {"text": "Understood!", "nextId": 3}
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Drag letters to the targets and form a word to open escape the room.",
+      "responses": [
+        {"text": "Got it!", "nextId": 4},
+        {"text": "Could you repeat the last step?", "nextId": 2}
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Do you want to play on hard mode?",
+      "responses": [
+        {"text": "Yes", "nextId": -1},
+        {"text": "No", "nextId": -1}
+      ]
+    }
+  ]
+}

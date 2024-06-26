@@ -24,6 +24,7 @@ public static class FileHandler
         try
         {
             string jsonContent = File.ReadAllText(filePath);
+          
             return JsonConvert.DeserializeObject<dynamic>(jsonContent);
         }
         catch (FileNotFoundException)
