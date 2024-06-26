@@ -4,7 +4,7 @@ public class Player : GameObject
 {
 
     private static Player instance = null;
-     private GameObjectFactory gameObjectFactory;
+    private GameObjectFactory gameObjectFactory;
     private int targetsLeft;
 
     public Map map = GameEngine.Instance.GetMap();
@@ -14,7 +14,7 @@ public class Player : GameObject
         Type = GameObjectType.Player;
         CharRepresentation = '☻';
         Color = ConsoleColor.DarkYellow;
-         this.gameObjectFactory = GameEngine.Instance.gameObjectFactory as GameObjectFactory;
+        this.gameObjectFactory = GameEngine.Instance.gameObjectFactory as GameObjectFactory;
         this.targetsLeft = gameObjectFactory.AmountOfBoxes;
 
     }
@@ -46,23 +46,23 @@ public class Player : GameObject
 
         GameObject? PotentialDoor = map.Get(goToY, goToX);
 
-        if (  gameObjectFactory.AmountOfBoxes == 11)
+        if (gameObjectFactory.AmountOfBoxes == 11)
         {
 
- 
-        GameEngine.Instance.UpdateTargetColors();
-
-      
-        if (PotentialDoor.Type == GameObjectType.Target && PotentialDoor.Code == "0" && PotentialDoor.Color == ConsoleColor.Green)
-        {
+//here target changes to green 
+            GameEngine.Instance.UpdateTargetColors();
 
 
-            Console.WriteLine("Yo are a winner!!");
+            if (PotentialDoor.Type == GameObjectType.Target && PotentialDoor.Code == "0" && PotentialDoor.Color == ConsoleColor.Green)
+            {
+
+
+                Console.WriteLine("Yo are a winner!!");
 
 
 
-            Environment.Exit(0);
-        }
+                Environment.Exit(0);
+            }
 
         }
 
