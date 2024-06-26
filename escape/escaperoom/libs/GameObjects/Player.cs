@@ -2,11 +2,14 @@ namespace libs;
 
 public class Player : GameObject
 {
-
     private static Player instance = null;
     private GameObjectFactory gameObjectFactory;
     private int targetsLeft;
     private int health;
+    private List<string> inventory;
+
+    public int Health => health;
+
     public Map map = GameEngine.Instance.GetMap();
 
     private Player() : base()
@@ -14,10 +17,10 @@ public class Player : GameObject
         Type = GameObjectType.Player;
         CharRepresentation = '☻';
         Color = ConsoleColor.DarkYellow;
-        this.health = 100;
         this.gameObjectFactory = GameEngine.Instance.gameObjectFactory as GameObjectFactory;
         this.targetsLeft = gameObjectFactory.AmountOfBoxes;
-
+        this.health = 100;
+        this.inventory = new List<string>();
     }
 
     public static Player Instance
@@ -39,49 +42,36 @@ public class Player : GameObject
         int goToX = PosX + dx;
         int goToY = PosY + dy;
 
+        GameObject? PotentialObject = map.Get(goToY, goToX);
 
-        GameObject? PotentialBox = map.Get(goToY, goToX);
+        if (PotentialObject.Type == GameObjectType.Obstacle) return;
 
-
-        if (PotentialBox.Type == GameObjectType.Obstacle) return;
-
-           if (PotentialBox.Type == GameObjectType.Enemy)
+        if (PotentialObject.Type == GameObjectType.Enemy)
         {
-            TakeDamage(25); 
+            TakeDamage(50);
             return;
         }
 
-        GameObject? PotentialDoor = map.Get(goToY, goToX);
 
         if (gameObjectFactory.AmountOfBoxes == 11)
         {
-
-       
             GameEngine.Instance.UpdateTargetColors();
 
-
-            if (PotentialDoor.Type == GameObjectType.Target && PotentialDoor.Code == "0" && PotentialDoor.Color == ConsoleColor.Green)
+            if (PotentialObject.Type == GameObjectType.Target && PotentialObject.Code == "0" && PotentialObject.Color == ConsoleColor.Green)
             {
-
-
-                Console.WriteLine("Yo are a winner!!");
-
-
-
+                Console.WriteLine("You are a winner!!");
                 Environment.Exit(0);
             }
-
         }
 
-        if (PotentialBox.Type == GameObjectType.Box)
+        if (PotentialObject.Type == GameObjectType.Box)
         {
             GameObject? NextObject = map.Get(goToY + dy, goToX + dx);
 
-
             if (NextObject.Type == GameObjectType.Obstacle || NextObject.Type == GameObjectType.Box) return;
 
-            PotentialBox.Move(dx, dy);
-            PotentialBox.Color = ConsoleColor.Red;
+            PotentialObject.Move(dx, dy);
+            PotentialObject.Color = ConsoleColor.Red;
         }
 
         this.SetPrevPosY(this.PosY);
@@ -89,7 +79,8 @@ public class Player : GameObject
         this.PosX += dx;
         this.PosY += dy;
     }
-       private void TakeDamage(int amount)
+
+    private void TakeDamage(int amount)
     {
         health -= amount;
         Console.WriteLine($"Player health: {health}");
@@ -99,4 +90,7 @@ public class Player : GameObject
             Environment.Exit(0);
         }
     }
+
+
+   
 }

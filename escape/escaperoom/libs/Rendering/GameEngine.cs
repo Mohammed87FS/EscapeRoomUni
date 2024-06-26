@@ -116,6 +116,14 @@ namespace libs
             }
 
             Console.WriteLine(new string('.', map.MapWidth));
+
+            // Render player health
+            var player = _focusedObject as Player;
+            if (player != null)
+            {
+                Console.WriteLine($"Player Health: {player.Health}");
+            }
+
             lastLineCursor = Console.CursorTop;
         }
 
@@ -147,11 +155,13 @@ namespace libs
 
         public void UpdateTargetColors()
         {
-            var targets = map.GetAllObjects()
-                             .Where(obj => obj.Type == GameObjectType.Target && obj.Color == ConsoleColor.Black)
-                             .ToList();
-
-            targets.ForEach(target => target.Color = ConsoleColor.Green);
+            foreach (var obj in map.GetAllObjects())
+            {
+                if (obj.Type == GameObjectType.Target && obj.Color == ConsoleColor.Black)
+                {
+                    obj.Color = ConsoleColor.Green;
+                }
+            }
         }
 
         public void SaveGameState()

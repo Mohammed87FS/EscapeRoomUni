@@ -34,6 +34,14 @@
           "Code":"o"
         },
         {
+          "Type": 5,
+          
+          "Color": 2,
+          "PosX": 3,
+          "PosY": 9
+      
+        },
+        {
           "Type": 4,
          
           "Color": 2,
@@ -931,7 +939,30 @@
         "Code":"r"
       },
 
-
+      {
+        "Type": 5,
+        
+        "Color": 2,
+        "PosX": 8,
+        "PosY": 8
+    
+      },
+      {
+        "Type": 5,
+        
+        "Color": 2,
+        "PosX": 2,
+        "PosY": 8
+    
+      },
+      {
+        "Type": 5,
+        
+        "Color": 2,
+        "PosX": 8,
+        "PosY": 1
+    
+      },
       
       {
         "Type": 2,
